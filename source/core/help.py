@@ -7,8 +7,8 @@ from .ToStdOut import ToStdout
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
-
 from .errors import Error
+
 
 history = InMemoryHistory()
 
