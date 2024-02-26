@@ -1,4 +1,5 @@
 import os
+import sys
 import traceback
 
 from prompt_toolkit import PromptSession
@@ -32,6 +33,8 @@ class Input:
                 ToStdout.write("\033[H\033[J")
                 return
             else:
+                if "exit" in data:
+                    sys.exit()
                 cmd = subprocess.Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
                 output = cmd.communicate()[0], cmd.communicate()[1]
                 for x in output:

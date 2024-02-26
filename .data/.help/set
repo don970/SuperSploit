@@ -3,6 +3,9 @@
       These are the values used by the program to run exploits, payloads
       ect.
 
-      [usage]:
+      [Usage]:
         set [variable] [value]
+
+      [Example]
+        set R_HOST 0.0.0.0
 
