@@ -43,3 +43,4 @@ class Help:
                     continue
             except Exception:
                 Error(traceback.format_exc())
+

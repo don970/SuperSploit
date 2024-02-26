@@ -9,4 +9,3 @@ class Error:
             stdout.write(data)
             stdout.close()
         return
-

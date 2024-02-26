@@ -16,3 +16,4 @@ class DatabaseManagment:
             data = json.load(file)
             file.close()
         return data
+
