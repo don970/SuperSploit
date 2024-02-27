@@ -12,11 +12,40 @@ from .ToStdOut import ToStdout
 from .help import Help
 from .show import Show
 from .set import SetV
+from .exploithandler import ExploitHandler
+from .use import use
+from .search import Search
+
 history = InMemoryHistory()
 
 
 
 class Input:
+    @classmethod
+    def sys_call_Linux(cls, data):
+        try:
+            cmd = subprocess.Popen(data.split(" "), shell=True, stdout=PIPE, stdin=PIPE, stderr=PIPE)
+            output = cmd.communicate()[0], cmd.communicate()[1]
+            for x in output:
+                if len(x) > 0:
+                    ToStdout.write(x.decode())
+            return True
+        except Exception as e:
+            Error(traceback.format_exc())
+            return False
+
+    @classmethod
+    def sys_call_other(cls, data):
+        try:
+            cmd = subprocess.Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+            output = cmd.communicate()[0], cmd.communicate()[1]
+            for x in output:
+                if len(x) > 0:
+                    ToStdout.write(x.decode())
+                return True
+        except Exception:
+            Error(traceback.format_exc())
+            return False
 
     def __init__(self):
         pass
@@ -24,8 +53,10 @@ class Input:
     @classmethod
     def check(cls, data):
         try:
-            functions = [Help.help, Show.show, SetV.SetV]
-            inputs = ["help", "show", "set"]
+            if data.endswith(" "):
+                data = data.lstrip(" ")
+            functions = [Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search]
+            inputs = ["help", "show", "set", "exploit", "use", "search"]
             if data.split(" ")[0] in inputs:
                 functions[inputs.index(data.split(" ")[0])](data)
                 return
@@ -35,12 +66,10 @@ class Input:
             else:
                 if "exit" in data:
                     sys.exit()
-                cmd = subprocess.Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-                output = cmd.communicate()[0], cmd.communicate()[1]
-                for x in output:
-                    if len(x) > 0:
-                        ToStdout.write(x.decode())
-                        return
+                if "Linux" in os.uname():
+                    cls.sys_call_Linux(data)
+                else:
+                    cls.sys_call_other(data)
         except Exception:
             Error(traceback.format_exc())
 

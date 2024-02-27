@@ -21,6 +21,7 @@ class Help:
     def help(cls, data):
         data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
         while True:
+            ToStdout.write('all - shows basic help page')
             a = data.prompt("Help: ")
             if "exit" in a or "back" in a:
                 break
