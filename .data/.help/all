@@ -2,4 +2,7 @@
                 all - Shows this page.
                 set - Set a value.
                 show - Shows value or values supplied to it.
+                use - Set the EXPLOIT or PAYLOAD value
+                search - Search for exploits or payloads
+                exploit - Runs the exploit
 

@@ -16,7 +16,6 @@ class DatabaseManagment:
 
     @classmethod
     def directlyModify(cls, data: list):
-        print(data)
         try:
             with open(".data/data.json") as file:
                 variables = json.load(file)

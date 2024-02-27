@@ -29,7 +29,6 @@ class Help:
                 with open(f".data/.help/{a}", "r") as file:
                     ToStdout.write(file.read())
                     file.close()
-                data.prompt("Press enter to continue: ")
                 continue
             try:
                 if "clear" in a:
@@ -40,7 +39,6 @@ class Help:
                     for x in output:
                         if len(x) > 0:
                             ToStdout.write(x.decode())
-                    data.prompt("Press enter to continue: ")
                     continue
             except Exception:
                 Error(traceback.format_exc())
