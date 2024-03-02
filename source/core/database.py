@@ -1,11 +1,11 @@
-# global variables
+# global variable
 import json
 import os.path
 import traceback
 
 from .errors import Error as error
 
-global path_to_database
+global path_to_datbase
 path_to_database = ".data/data.json"
 
 
@@ -13,6 +13,17 @@ class DatabaseManagment:
 
     def __init__(self):
         pass
+
+    @classmethod
+    def findTerm(cls):
+        term = None
+        with open(".data/.terminals", "r") as file:
+            terms = file.read().split("\n")
+            file.close()
+        for x in terms:
+            if x in os.listdir("/bin"):
+                term = x
+        return term
 
     @classmethod
     def directlyModify(cls, data: list):

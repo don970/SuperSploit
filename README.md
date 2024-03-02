@@ -6,13 +6,13 @@ this is being used against or on.**
 
 SuperSploit is my first attempt at an exploit management system I took inspiration from Metasploit.
 
-Supersploit is a small python program, the program is capable of creating and handling backdoors along with initial exploit connections. The program has a custom obscuration system to hide data being 
-sent over the network, a custom handler that acts like a server thus allowing the program to handle 
-dozens of connections at one time.
+Supersploit is a small python program, the program is capable of creating and handling backdoors 
+along with initial exploit connections. 
 
 **KEY POINTS**
     * Lightweight
     * Able to run any platform with python3
-    * Fully incorprated shell on linux
+    * Fully incorporated shell on linux
     * Auto-suggested inputs with history
-    
+    * Python allows for a more secure exploitation framework
+    * 

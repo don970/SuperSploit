@@ -24,6 +24,9 @@ class Input:
     @classmethod
     def sys_call_Linux(cls, data):
         try:
+            if "ls" in data:
+                cmd = subprocess.run(["ls", data.split(" ")[1]])
+                return
             cmd = subprocess.Popen(data.split(" "), shell=True, stdout=PIPE, stdin=PIPE, stderr=PIPE)
             output = cmd.communicate()[0], cmd.communicate()[1]
             for x in output:

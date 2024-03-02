@@ -1,1 +1,1 @@
-{"R_HOST": "0.0.0.0", "L_HOST": "192.168.1.19", "R_PORT": "9999", "L_PORT": "9999", "EXPLOIT": "exploits/chrome/pkexec.py", "PAYLOAD": "payloads/SE/fake_sudo_prompt.py"}
+{"R_HOST": "0.0.0.0", "L_HOST": "192.168.1.19", "R_PORT": "9999", "L_PORT": "9999", "EXPLOIT": "exploits/multi/handler.py", "PAYLOAD": "payloads/SE/fake_sudo_prompt.py"}
