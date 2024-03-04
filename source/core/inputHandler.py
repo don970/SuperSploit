@@ -3,7 +3,7 @@ import sys
 import traceback
 
 from prompt_toolkit import PromptSession
-from prompt_toolkit.history import InMemoryHistory
+from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 import subprocess
 from subprocess import PIPE
@@ -15,8 +15,9 @@ from .set import SetV
 from .exploithandler import ExploitHandler
 from .use import use
 from .search import Search
+from .banners import banners
 
-history = InMemoryHistory()
+history = FileHistory('.data/.history/history')
 
 
 
@@ -58,8 +59,8 @@ class Input:
         try:
             if data.endswith(" "):
                 data = data.lstrip(" ")
-            functions = [Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search]
-            inputs = ["help", "show", "set", "exploit", "use", "search"]
+            functions = [Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners]
+            inputs = ["help", "show", "set", "exploit", "use", "search", "banner"]
             if data.split(" ")[0] in inputs:
                 functions[inputs.index(data.split(" ")[0])](data)
                 return
