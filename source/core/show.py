@@ -1,9 +1,14 @@
 from .database import DatabaseManagment
 from .ToStdOut import ToStdout
+from .exploithandler import exploitDetails
+
 class Show:
 
     @staticmethod
     def show(data):
+        if "details" in data.split(" ")[1]:
+            exploitDetails()
+            return
         if len(data.split(' ')) > 1:
             for x in data.split(" "):
                 if data.split(" ").index(x) > 0:

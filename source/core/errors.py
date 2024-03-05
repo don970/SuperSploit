@@ -5,7 +5,7 @@ class Error:
             data = f"{str(data)}"
         if not data.endswith("\n"):
             data = f"{data}\n"
-        with open("/dev/stdout", "w") as stdout:
+        with open(".data/.errors/error.log", "a") as stdout:
             stdout.write(data)
             stdout.close()
         return

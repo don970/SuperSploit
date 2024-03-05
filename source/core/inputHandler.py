@@ -79,6 +79,7 @@ class Input:
 
     @classmethod
     def get(cls):
+        banners()
         while True:
             try:
                 data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
