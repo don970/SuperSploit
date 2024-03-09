@@ -2,7 +2,7 @@ import os
 from socket import socket, AF_INET, SOCK_STREAM
 from time import sleep
 
-
+ 
 ip = "0.0.0.0"
 a = socket(AF_INET, SOCK_STREAM)
 a.connect((ip, 9999))

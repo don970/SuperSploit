@@ -20,6 +20,10 @@ class SetV:
                 file.close()
             for k, v in variables.items():
                 if data[1] == k:
+                    if data[2] == "true":
+                        data[2] = True
+                    if data[2] == 'false':
+                        data[2] = False
                     variables[k] = data[2]
             with open(".data/data.json", "w") as file:
                 file.write(json.dumps(variables))

@@ -7,11 +7,11 @@ from .ToStdOut import ToStdout
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
+from prompt_toolkit import prompt
 from .errors import Error
 
 
 history = InMemoryHistory()
-
 
 class Help:
     def __init__(self):

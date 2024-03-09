@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
-pythonlib='/usr/lib/python3.11'
-pythondeps=()
-binarydeps=()
-
-for val in ${$pythondeps[@]}
-do
-  if [ -f "$pythonlib/$val" ]; then
-    sleep(1)
-  else
-   pip install $val
-  fi
-done
+sudo apt-get install python3-prompt-toolkit
+sudo apt-get install python3-pyfiglet
+# add buildozer set up in to here
+chmod +x start.sh
+bash start.sh
