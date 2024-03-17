@@ -24,12 +24,10 @@ class WifiScan:
         else:
             master = True
 
-        # now we check the if connected
+        # now we check if connected
         if not self.isConnected(master):
             input('[!] not connected to network press enter to exit')
             return
-        input('[*] connected to a network starting wifi tool menu press enter to continue.')
-        os.system('clear')
         self.startWirelesMenu()
 
     @staticmethod

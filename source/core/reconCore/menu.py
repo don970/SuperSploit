@@ -1,8 +1,10 @@
-import os
-import subprocess
+import traceback
+from subprocess import Popen, run, PIPE
+from ..errors import Error
+from ..help import Help
+from ..ToStdOut import ToStdout
 from .networkRecon import WifiScan
 from .Bluetooth import bt
-
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
@@ -12,69 +14,30 @@ input = input.prompt
 
 
 class menu:
-    INPUT = None
 
     def __init__(self):
         while True:
-            self.INPUT = self.startMenu()
-            if self.startChoice():
-                continue
-            else:
-                return
-
-    def getMyInfo(self):
-        ipList = []
-        ip = subprocess.run(['ip', 'addr'], capture_output=True)
-        ip = ip.stdout.decode().split('\n')
-        for x in ip:
-            if 'inet' in x and 'brd' in x:
-                ipList.append(x)
-        ip = ipList
-        ipList = []
-        subnetList = []
-        for y in ip:
-            ipList.append(y.split(' ')[5].split('/')[0])
-            subnetList.append(y.split(' ')[5].split('/')[1])
-        ip = ipList
-        ipList = []
-        return ip, subnetList
-
-    def startMenu(self):
-        os.system("clear")
-        while True:
             try:
-                try:
-                    data = int(input("""1.) Wifi network reconCore 
-2.) BlueTooth reconCore
-3.) bluetooth LE reconCore
-4.) View previous logs
-0.) to exit
-[Welcome to SuperSploit Network reconCore mode]: """))
-                    return data
-                except ValueError:
+                functions = [WifiScan, bt, Help.recon]
+                inputs = ["wifi", "bt", "help"]
+                data = input("[Recon menu]: ")
+                if "exit" in data:
+                    break
+                if data in inputs:
+                    functions[inputs.index(data)](data)
                     continue
-            except KeyboardInterrupt:
-                return
-
-    def startChoice(self):
-        info = self.getMyInfo()
-        os.system("clear")
-        try:
-            data = int(self.INPUT)
-        except TypeError:
-            return False
-        func = ["return", WifiScan, bt]
-        if data == 0:
-            return False
-
-        # development lock for not implemented features
-        if data > 2:
-            input("Sorry not implemented yet press enter to continue")
-            return True
-
-        func[data](info)
-        self.resetFlags()
-        return True
-
-    def resetFlags(self):
-        self.INPUT = None
+                try:
+                    if "clear" in data:
+                        ToStdout.write("\033[H\033[J")
+                        continue
+                    else:
+                        cmd = Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+                        output = cmd.communicate()[0], cmd.communicate()[1]
+                        for x in output:
+                            if len(x) > 0:
+                                ToStdout.write(x.decode())
+                        continue
+                except Exception:
+                    Error(traceback.format_exc())
+            except Exception:
+                Error(traceback.format_exc())
