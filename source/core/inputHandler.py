@@ -16,7 +16,7 @@ from .use import use
 from .search import Search
 from .banners import banners
 from .database import DatabaseManagment
-from .run import run
+from .recon import Recon
 
 history = FileHistory('.data/.history/history')
 
@@ -60,8 +60,8 @@ class Input:
         try:
             if data.endswith(" "):
                 data = data.lstrip(" ")
-            functions = [run, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-            inputs = ["run", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+            functions = [Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            inputs = ["recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
             if data.split(" ")[0] in inputs:
                 functions[inputs.index(data.split(" ")[0])](data)
                 return

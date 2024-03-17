@@ -3,3 +3,75 @@ Traceback (most recent call last):
     cmd = subprocess.run(["ls", data.split(" ")[1]])
                                 ~~~~~~~~~~~~~~~^^^
 IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 66, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/recon.py", line 10, in __init__
+    menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 13, in __init__
+    if self.startChoice():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 68, in startChoice
+    func[data](info)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 26, in __init__
+    self.startWirelesMenu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 76, in startWirelesMenu
+    f = funcs[int(data)](self.ips)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 22, in __init__
+    self.basicScan()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 41, in basicScan
+    with open("Notes/IpCaptures", "a") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'Notes/IpCaptures'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 66, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/recon.py", line 10, in __init__
+    menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 20, in __init__
+    if self.startChoice():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 75, in startChoice
+    func[data](info)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 12, in __init__
+    self.menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 98, in menu
+    selections[indexes.index(selected)]()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 45, in BlueRanger
+    os.chdir(f"{cwd}/source/Functions/recon/Bluetooth")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/donald/SuperSploit-V1.0.5/source/Functions/recon/Bluetooth'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 66, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/recon.py", line 10, in __init__
+    menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 20, in __init__
+    if self.startChoice():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 75, in startChoice
+    func[data](info)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 12, in __init__
+    self.menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 98, in menu
+    selections[indexes.index(selected)]()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 45, in BlueRanger
+    os.chdir(f"{cwd}/source/Functions/recon/Bluetooth")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/donald/SuperSploit-V1.0.5/source/Functions/recon/Bluetooth'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 66, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/recon.py", line 10, in __init__
+    menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 20, in __init__
+    if self.startChoice():
+       ^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 75, in startChoice
+    func[data](info)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 12, in __init__
+    self.menu()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 98, in menu
+    selections[indexes.index(selected)]()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/Bluetooth/blueTooth.py", line 45, in BlueRanger
+    os.chdir(f"{cwd}/source/Functions/reconCore/Bluetooth")
+FileNotFoundError: [Errno 2] No such file or directory: '/home/donald/SuperSploit-V1.0.5/source/Functions/reconCore/Bluetooth'
