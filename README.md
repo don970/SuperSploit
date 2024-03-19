@@ -15,4 +15,5 @@ along with initial exploit connections.
     * Fully incorporated shell on linux
     * Auto-suggested inputs with history
     * Python allows for a more secure exploitation framework
+    * Recon/Osnit mode that has nmap, airgeddon, phoneinfoga and more
     * 
