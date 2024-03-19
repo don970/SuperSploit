@@ -12,3 +12,5 @@
                 save-targets - Makes a persistent target list
                 view-targets - Shows current target list
                 import-targets - Imports saved targets
+                custom-scan - Starts a custom nmap scan
+
