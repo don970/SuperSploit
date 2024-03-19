@@ -1,8 +1,44 @@
-Starting Nmap 7.93 ( https://nmap.org ) at 2024-03-18 23:41 PDT
-Nmap scan report for 192.168.1.249
-Host is up (0.010s latency).
-All 1000 scanned ports on 192.168.1.249 are in ignored states.
-Not shown: 1000 closed tcp ports (conn-refused)
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-03-19 00:37 PDT
+Nmap scan report for 192.168.1.1
+Host is up (0.0030s latency).
+Not shown: 846 closed tcp ports (conn-refused), 148 filtered tcp ports (no-response)
+PORT      STATE SERVICE     VERSION
+53/tcp    open  domain      dnsmasq 2.55
+| dns-nsid: 
+|   NSID: snloca-rdns-07 (736e6c6f63612d72646e732d3037)
+|   id.server: snloca-rdns-07
+|_  bind.version: dnsmasq-2.55
+80/tcp    open  http        lighttpd
+|_http-server-header: HTTP Server
+|_http-title: Did not follow redirect to https://192.168.1.1/
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: HOME)
+443/tcp   open  ssl/http    lighttpd
+| ssl-cert: Subject: commonName=self-signedKey/organizationName=Sagemcom Ca/countryName=FR
+| Not valid before: 2011-10-14T12:32:29
+|_Not valid after:  2111-09-20T12:32:29
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: HTTP Server
+| http-title: Site doesn't have a title (text/html).
+|_Requested resource was /0.2/gui/
+|_http-trane-info: Problem with XML parsing of /evox/about
+445/tcp   open  netbios-ssn Samba smbd 3.0.24 (workgroup: HOME)
+49152/tcp open  upnp        Portable SDK for UPnP devices 1.6.18 (Linux 4.1.45-5.02L.04; UPnP 1.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel:4.1.45-5.02l.04
+
+Host script results:
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.24)
+|   NetBIOS computer name: 
+|   Workgroup: HOME\x00
+|_  System time: 2024-03-19T02:37:23-05:00
+|_clock-skew: mean: 2h29m59s, deviation: 3h32m07s, median: 0s
+|_nbstat: NetBIOS name: RAC2V1S, NetBIOS user: <unknown>, NetBIOS MAC: 000000000000 (Xerox)
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: share (dangerous)
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 2.97 seconds
+Nmap done: 1 IP address (1 host up) scanned in 29.37 seconds

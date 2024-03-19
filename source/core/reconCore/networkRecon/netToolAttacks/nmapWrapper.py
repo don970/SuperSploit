@@ -91,3 +91,24 @@ class nmap:
             file.write(output.stdout.decode())
             file.close()
         return "[*] Full scan logged to .data/.targeted_scan"
+
+    def customScan(self):
+        if len(self.targetlist) < 1:
+            return "[!] No targets available."
+        for x in self.targetlist:
+            print(f"{self.targetlist.index(x)}: {x}")
+        data = input("Enter the index of the target: ")
+        try:
+            data = int(data)
+            pass
+        except Exception:
+            return "[!] Invalid Input"
+        data1 = input("Now enter the arguments to use: ")
+        print("[*] Scanning... ")
+        output = run(["nmap", data1, self.targetlist[data]], capture_output=True)
+        print("[*] Populating custom scan file")
+        with open(".data/.custom_scan", "w") as file:
+            file.write(output.stdout.decode())
+            file.close()
+        return "[*] Full scan logged to .data/.custom_scan"
+

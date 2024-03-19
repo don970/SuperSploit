@@ -2,6 +2,7 @@ import json
 import os
 from core.inputHandler import Input
 
+
 print(os.getcwd())
 a = {
     "~": os.getenv("HOME")

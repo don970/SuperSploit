@@ -36,9 +36,9 @@ class Input:
                 dataList[dataList.index(k)] = v
 
         if "cd" in dataList:
-            ToStdout.write("[*] The cd command will spawn a shell in the folder you change to. This is\n"
-                           "because the program release on the working dir to be the programs install\n"
-                           "folder. I will update in future to be able to just use cd.")
+            ToStdout.write("[*] The cd command will spawn the login shell in the folder you change to. "
+                           "This is because the program release on the working dir to be the programs "
+                           "install folder. I will update in future to be able to just use cd.")
             cwd = os.getcwd()
             os.chdir(dataList[1])
             pty.spawn(f"{os.getenv('SHELL')}")
