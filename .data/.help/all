@@ -7,6 +7,3 @@
                 search - Search for exploits or payloads
                 exploit - Runs the exploit
                 add - Adds a variable to the database
-
-     Payload Generator:
-                android - compile the file in the payload value for android

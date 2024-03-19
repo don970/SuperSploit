@@ -1,0 +1,8 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-03-18 23:41 PDT
+Nmap scan report for 192.168.1.249
+Host is up (0.010s latency).
+All 1000 scanned ports on 192.168.1.249 are in ignored states.
+Not shown: 1000 closed tcp ports (conn-refused)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 2.97 seconds

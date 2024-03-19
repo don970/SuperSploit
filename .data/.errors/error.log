@@ -1,14 +1,126 @@
 Traceback (most recent call last):
-  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 25, in __init__
-    functions[inputs.index(data)](data)
-  File "/home/donald/SuperSploit-V1.0.5/source/core/help.py", line 29, in recon
-    with open(f".data/.help/{a}", "r") as file:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '.data/.help/wifi'
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 27, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 28, in __init__
+    nmap([ip, subnet])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 12, in __init__
+    self.basicScan()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 16, in basicScan
+    if not input(f"would you like to perform a scan with a subnet of ({self.ipStr}): ").startswith("y"):
+                                                                       ^^^^^^^^^^
+AttributeError: 'nmap' object has no attribute 'ipStr'
 Traceback (most recent call last):
-  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 24, in __init__
-    functions[inputs.index(data)](data)
-  File "/home/donald/SuperSploit-V1.0.5/source/core/help.py", line 29, in recon
-    with open(f".data/.help/{a}", "r") as file:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: '.data/.help/wifi'
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 27, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 28, in __init__
+    nmap([ip, subnet])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 12, in __init__
+    self.basicScan()
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/netToolAttacks/nmapWrapper.py", line 16, in basicScan
+    if not input(f"would you like to perform a scan with a subnet of ({self.ipStr}): ").startswith("y"):
+                                                                       ^^^^^^^^^^
+AttributeError: 'nmap' object has no attribute 'ipStr'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 27, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 28, in __init__
+    self.GetData([ip, subnet, host])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 36, in GetData
+    funcs[inputs.index(data)]()
+TypeError: nmap.targetedScan() missing 1 required positional argument: 'self'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 89, in GetData
+    cmd = Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'scan-target'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 29, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 70, in __init__
+    self.GetData([ip, subnet, host])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 96, in GetData
+    error(e)
+    ^^^^^
+NameError: name 'error' is not defined
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 29, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 70, in __init__
+    self.GetData([ip, subnet, host])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 82, in GetData
+    print(funcs[inputs.index(data)]())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: help.__init__() missing 1 required positional argument: 'data'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 31, in sys_call_Linux
+    data[data.index("~")] = os.getenv("HOME")
+    ~~~~^^^^^^^^^^^^^^^^^
+TypeError: 'str' object does not support item assignment
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 74, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/recon.py", line 8, in __init__
+    menu()
+TypeError: menu.__init__() missing 1 required positional argument: 'Input'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 74, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/exploithandler.py", line 30, in __init__
+    self.database = DatabaseManagment.get()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/database.py", line 59, in get
+    data = json.load(file)
+           ^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 293, in load
+    return loads(fp.read(),
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 37, in __init__
+    cmd = Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'wif'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/inputHandler.py", line 80, in check
+    os.chdir(data.split(" ")[1])
+FileNotFoundError: [Errno 2] No such file or directory: '~'
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 74, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 112, in __init__
+    self.GetData([ip, subnet, host])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 124, in GetData
+    print(funcs[inputs.index(data)]())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 85, in __init__
+    if x in data:
+       ^^^^^^^^^
+TypeError: argument of type 'PromptSession' is not iterable
+Traceback (most recent call last):
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/menu.py", line 74, in __init__
+    functions[inputs.index(data)](Error)
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 112, in __init__
+    self.GetData([ip, subnet, host])
+  File "/home/donald/SuperSploit-V1.0.5/source/core/reconCore/networkRecon/startNetworkRecon.py", line 124, in GetData
+    print(funcs[inputs.index(data)]())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'str'

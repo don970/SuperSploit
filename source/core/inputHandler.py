@@ -1,5 +1,7 @@
+import json
 import os
 import sys
+import pty
 import traceback
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
@@ -25,11 +27,34 @@ history = FileHistory('.data/.history/history')
 class Input:
     @classmethod
     def sys_call_Linux(cls, data):
+        dataList = data.split(' ')
+        with open(".data/Aliases.json") as file:
+            Aliases = json.load(file)
+            file.close()
+        for k, v in Aliases.items():
+            if k in dataList:
+                dataList[dataList.index(k)] = v
+
+        if "cd" in dataList:
+            ToStdout.write("[*] The cd command will spawn a shell in the folder you change to. This is\n"
+                           "because the program release on the working dir to be the programs install\n"
+                           "folder. I will update in future to be able to just use cd.")
+            cwd = os.getcwd()
+            os.chdir(dataList[1])
+            pty.spawn(f"{os.getenv('SHELL')}")
+            os.chdir(cwd)
+            return
+
+        if "cat" in dataList:
+            with open(dataList[1], 'r') as file:
+                ToStdout.write(file.read())
+                file.close()
+                return
         try:
             if "ls" in data:
-                cmd = subprocess.run(["ls", data.split(" ")[1]])
+                cmd = subprocess.run(dataList)
                 return
-            cmd = subprocess.Popen(data.split(" "), shell=True, stdout=PIPE, stdin=PIPE, stderr=PIPE)
+            cmd = subprocess.Popen(dataList, shell=True, stdout=PIPE, stdin=PIPE, stderr=PIPE)
             output = cmd.communicate()[0], cmd.communicate()[1]
             for x in output:
                 if len(x) > 0:
