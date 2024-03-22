@@ -33,4 +33,4 @@ search feature
 ![Screenshot from 2024-03-22 15-10-45](https://github.com/don970/SuperSploit/assets/81848615/796392bc-949e-44df-9cc5-6433b5239477)
 
 starting a test exploit
-![Screenshot from 2024-03-22 15-08-18](https://github.com/don970/SuperSploit/assets/81848615/4b21a8ab-e6dd-4d15-a220-9e6a216fbd56)
+![Screenshot 2024-03-22 3 20 28 PM](https://github.com/don970/SuperSploit/assets/81848615/f4d956cb-e175-44c5-b289-2d047ac3012e)
