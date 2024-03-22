@@ -152,3 +152,10 @@ Traceback (most recent call last):
     Type = self.database["EXPLOIT"].split(".")[len(self.database["EXPLOIT"].split('.') - 1)]
                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
 TypeError: unsupported operand type(s) for -: 'list' and 'int'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/use.py", line 10, in __init__
+    DatabaseManagment.directlyModify([data[1], exploits[data[2]]])
+                                               ~~~~~~~~^^^^^^^^^
+IndexError: list index out of range

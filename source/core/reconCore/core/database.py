@@ -3,7 +3,26 @@ import json
 import os.path
 import traceback
 
-from .errors import Error as error
+
+def error(data):
+    try:
+        if "str" not in str(type(data)):
+            try:
+                data = data.decode()
+                pass
+            except Exception:
+                data = f"{str(data)}"
+                pass
+        if not data.endswith("\n"):
+            data = f"{data}\n"
+        with open(f"{installlocation}/.data/.errors/error.log", "a") as stdout:
+            stdout.write(data)
+            stdout.close()
+        return
+    except Exception as e:
+        print(e)
+
+
 
 global path_to_datbase
 installlocation = f'{os.getenv("HOME")}/.SuperSploit'

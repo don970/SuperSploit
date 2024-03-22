@@ -1,1 +1,1 @@
-{"R_HOST": "0.0.0.0", "L_HOST": "192.168.1.19", "R_PORT": "9999", "L_PORT": "9999", "EXPLOIT": "/home/donald/.SuperSploit/exploits/multi/handler.py", "PAYLOAD": "payloads/SE/fake_sudo_prompt.py", "STAGED": false}
+{"R_HOST": "0.0.0.0", "L_HOST": "192.168.1.19", "R_PORT": "9999", "L_PORT": "9999", "EXPLOIT": "/home/donald/.SuperSploit/exploits/chrome/chrome_os_sudo_nopasswd.py", "PAYLOAD": "/home/donald/.SuperSploit/payloads/python/multiPlatform.py", "STAGED": true, "SHELL": "/bin/python3", "EXE": "pkexec"}

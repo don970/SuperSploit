@@ -2,21 +2,29 @@ import json
 import os
 from core.inputHandler import Input
 
-# create alliases file
+# create an object to hold the aliases
 a = {
     "~": os.getenv("HOME")
 }
 
-installlocation = f'{os.getenv("HOME")}/.SuperSploit'
+# Creating a global variable for the installation path also creates a pointer
+# allowing us to use the cd command while still knowing the full path to the
+# installation dictionary.
+# This also allows us to call the program from anywhere on the disk
 
-with open(f"{installlocation}/.data/Aliases.json", "r") as file:
+installation = f'{os.getenv("HOME")}/.SuperSploit'
+
+
+# load aliases globally
+with open(f"{installation}/.data/Aliases.json", "r") as file:
     di = json.load(file)
     file.close()
+
 
 if os.getenv("HOME") == di["~"]:
     pass
 else:
-    with open(f"{installlocation}/.data/Aliases.json", "w") as file:
+    with open(f"{installation}/.data/Aliases.json", "w") as file:
         file.write(json.dumps(a))
         file.close()
 
