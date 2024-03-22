@@ -49,8 +49,9 @@ def sys_call_Linux(data):
         return True
     except Exception as e:
         print(e)
-
 # replace the print method
+
+
 def print(data):
     if "str" not in str(type(data)):
         try:
@@ -65,6 +66,8 @@ def print(data):
         stdout.write(data)
         stdout.close()
     return
+
+
 def get_network_info():
     host = socket.gethostname()
     data = run(["ip", "addr"], capture_output=True).stdout.decode().split("\n")
@@ -73,6 +76,7 @@ def get_network_info():
             ip = i.split(" ")[5].split('/')[0]
             subnet = i.split(" ")[5].split('/')[1]
             return ip, subnet, host
+
 
 class help:
     @classmethod
@@ -103,6 +107,7 @@ class help:
             except Exception:
                 print(traceback.format_exc())
                 return
+
 
 class WifiScan:
 

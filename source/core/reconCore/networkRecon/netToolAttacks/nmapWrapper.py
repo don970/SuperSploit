@@ -44,7 +44,7 @@ class nmap:
             print(x)
         return "[*] Showing all saved targets"
 
-    def scan_whole_network(self) -> list or False:
+    def  scan_whole_network(self) -> list or False:
         custr = f"{self.ip}/{self.subnet}"
         if not input(f"would you like to perform a scan with a subnet of ({self.ip}/{self.subnet}): ").startswith("y"):
             custr = input("[*] Enter the address and subnet [ip/sub]: ")

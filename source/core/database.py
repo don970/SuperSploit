@@ -55,6 +55,8 @@ class DatabaseManagment:
                 variables["EXPLOIT"] = data[1]
             if "payload" in data[0]:
                 variables["PAYLOAD"] = data[1]
+            if "target" in data[0]:
+                variables["R_HOST"] = data[1]
             with open(f"{installlocation}/.data/data.json", "w") as file:
                 file.write(json.dumps(variables))
                 file.close()

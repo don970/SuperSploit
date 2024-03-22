@@ -14,6 +14,7 @@ class Search:
 
     @classmethod
     def search(cls, data):
+        targetlist = []
         try:
             data = data.split(" ")
             if len(data) < 2:
@@ -54,6 +55,13 @@ class Search:
                 for xx in found:
                     print(f'{exploits.index(xx)}: {xx}')
                 return
+            elif data[1] == "targets":
+                with open(f"{installation}/.data/.targets") as file:
+                    for x in file.read().split("\n"):
+                        targetlist.append(x)
+                    file.close()
+                for x in targetlist:
+                    print(f"{targetlist.index(x)}: {x}")
             else:
                 return
         except Exception:
