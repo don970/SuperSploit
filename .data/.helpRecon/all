@@ -4,6 +4,7 @@
                 all - Shows this page.
                 wifi - Starts the wifi osnit menu
                 bt - Start the Bluetooth osnit menu
+                phoneinfoga - starts phoneinfoga wrapper
 
 
      wifi menu:
