@@ -23,10 +23,12 @@ def sys_call_Linux(data):
     with open(".data/Aliases.json") as file:
         Aliases = json.load(file)
         file.close()
+
     for k, v in Aliases.items():
         if k in dataList:
             dataList[dataList.index(k)] = v
 
+    # Catch cd command being passed
     if "cd" in dataList:
         ToStdout.write("[*] The cd command will spawn a shell in the folder you change to. This is\n"
                        "because the program release on the working dir to be the programs install\n"

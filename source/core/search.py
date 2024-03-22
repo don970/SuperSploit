@@ -5,9 +5,8 @@ from prompt_toolkit import prompt
 from .ToStdOut import ToStdout
 from .errors import Error
 
-
 input = prompt
-
+installation = f'{os.getenv("HOME")}/.SuperSploit'
 
 class Search:
     def __init__(self):
@@ -18,37 +17,40 @@ class Search:
         try:
             data = data.split(" ")
             if len(data) < 2:
-                ToStdout.write("please provide a argument to search for")
-                return
+                ToStdout.write("Please provide a argument to search for. ")
+                with open(f"{installation}/.data/.help/search", "r") as file:
+                    ToStdout.write(file.read())
+                    file.close()
+                    return
             key = {}
             exploits = []
             searches = data[2:]
             found = []
             if data[1] == "exploits":
-                for x in os.listdir("exploits"):
-                    for y in os.listdir(f"exploits/{x}"):
-                        exploits.append(f"exploits/{x}/{y}")
+                for x in os.listdir(f"{installation}/exploits"):
+                    for y in os.listdir(f"{installation}/exploits/{x}"):
+                        exploits.append(f"{installation}/exploits/{x}/{y}")
                 if len(data) < 3:
                     for i in exploits:
                         print(f'{exploits.index(i)}: {i}')
                 for z in exploits:
-                  for s in searches:
-                      if s in z:
-                         found.append(z)
+                    for s in searches:
+                        if s in z:
+                            found.append(z)
                 for xx in found:
                     print(f'{exploits.index(xx)}: {xx}')
                 return
             elif data[1] == "payloads":
-                for x in os.listdir("payloads"):
-                    for y in os.listdir(f"payloads/{x}"):
-                        exploits.append(f"payloads/{x}/{y}")
+                for x in os.listdir(f"{installation}/payloads"):
+                    for y in os.listdir(f"{installation}/payloads/{x}"):
+                        exploits.append(f"{installation}/payloads/{x}/{y}")
                 if len(data) < 3:
                     for i in exploits:
                         print(f'{exploits.index(i)}: {i}')
                 for z in exploits:
-                  for s in searches:
-                      if s in z:
-                         found.append(z)
+                    for s in searches:
+                        if s in z:
+                            found.append(z)
                 for xx in found:
                     print(f'{exploits.index(xx)}: {xx}')
                 return
@@ -56,5 +58,3 @@ class Search:
                 return
         except Exception:
             Error(traceback.format_exc())
-
-

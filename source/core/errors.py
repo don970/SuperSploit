@@ -1,6 +1,9 @@
+import os
+
 from .ToStdOut import ToStdout
 write = ToStdout.write
 
+installlocation = f'{os.getenv("HOME")}/.SuperSploit'
 
 class Error:
     def __init__(self, data):
@@ -14,7 +17,7 @@ class Error:
                     pass
             if not data.endswith("\n"):
                 data = f"{data}\n"
-            with open(".data/.errors/error.log", "a") as stdout:
+            with open(f"{installlocation}/.data/.errors/error.log", "a") as stdout:
                 stdout.write(data)
                 stdout.close()
             write(data)

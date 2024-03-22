@@ -20,7 +20,8 @@ from .banners import banners
 from .database import DatabaseManagment
 from .recon import Recon
 
-history = FileHistory('.data/.history/history')
+installlocation = f'{os.getenv("HOME")}/.SuperSploit'
+history = FileHistory(f'{installlocation}/.data/.history/history')
 
 
 
@@ -28,7 +29,7 @@ class Input:
     @classmethod
     def sys_call_Linux(cls, data):
         dataList = data.split(' ')
-        with open(".data/Aliases.json") as file:
+        with open(f"{installlocation}/.data/Aliases.json") as file:
             Aliases = json.load(file)
             file.close()
         for k, v in Aliases.items():
@@ -36,13 +37,7 @@ class Input:
                 dataList[dataList.index(k)] = v
 
         if "cd" in dataList:
-            ToStdout.write("[*] The cd command will spawn the login shell in the folder you change to. "
-                           "This is because the program release on the working dir to be the programs "
-                           "install folder. I will update in future to be able to just use cd.")
-            cwd = os.getcwd()
             os.chdir(dataList[1])
-            pty.spawn(f"{os.getenv('SHELL')}")
-            os.chdir(cwd)
             return
 
         if "cat" in dataList:
@@ -50,6 +45,7 @@ class Input:
                 ToStdout.write(file.read())
                 file.close()
                 return
+
         try:
             if "ls" in data:
                 cmd = subprocess.run(dataList)
@@ -60,7 +56,7 @@ class Input:
                 if len(x) > 0:
                     ToStdout.write(x.decode())
             return True
-        except Exception as e:
+        except Exception:
             Error(traceback.format_exc())
             return False
 

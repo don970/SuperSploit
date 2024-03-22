@@ -10,7 +10,7 @@ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from prompt_toolkit import prompt
 from .errors import Error
 
-
+installlocation = f'{os.getenv("HOME")}/.SuperSploit'
 history = InMemoryHistory()
 
 class Help:
@@ -25,7 +25,7 @@ class Help:
             a = data.prompt("[Recon Help]: ")
             if "exit" in a or "back" in a:
                 break
-            if a in os.listdir(".data/.helpRecon"):
+            if a in os.listdir(f"{installlocation}/.data/.helpRecon"):
                 with open(f".data/.helpRecon/{a}", "r") as file:
                     ToStdout.write("\033[H\033[J")
                     ToStdout.write(file.read())
@@ -52,8 +52,8 @@ class Help:
             a = data.prompt("[Help]: ")
             if "exit" in a or "back" in a:
                 break
-            if a in os.listdir(".data/.help"):
-                with open(f".data/.help/{a}", "r") as file:
+            if a in os.listdir(f"{installlocation}/.data/.help"):
+                with open(f"{installlocation}/.data/.help/{a}", "r") as file:
                     ToStdout.write("\033[H\033[J")
                     ToStdout.write(file.read())
                     file.close()

@@ -1,5 +1,4 @@
 from .database import DatabaseManagment
-from .set import SetV
 
 class use:
     def __init__(self, data):
