@@ -1,2 +1,1 @@
-python3 source/main.py
-# 2> /tmp/supersploit_error.log
+cd $HOME/.SuperSploit && python3 source/main.py
