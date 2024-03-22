@@ -16,4 +16,5 @@ along with initial exploit connections.
     * Auto-suggested inputs with history
     * Python allows for a more secure exploitation framework
     * Recon/Osnit mode that has nmap, airgeddon, phoneinfoga and more
-    * 
+
+

@@ -16,13 +16,14 @@ from .database import DatabaseManagment
 from subprocess import Popen, run, PIPE
 from .reconCore.networkRecon import WifiScan
 from .reconCore.Bluetooth import bt
+from .reconCore.external_tools.phoneinfoga import Phone
 
 # redefine input method
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
-
-history = FileHistory('.data/.history/history')
+installation = f'{os.getenv("HOME")}/.SuperSploit'
+history = FileHistory(f'{installation}/.data/.history/history')
 input = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
 input = input.prompt
 
@@ -85,12 +86,12 @@ class Recon:
 
         while True:
             try:
-                functions = [WifiScan, bt, Help.recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-                inputs = ["import-targets", "wifi", "bt", "recon-help", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+                functions = [Phone, WifiScan, bt, Help.recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+                inputs = ["phoneinfoga", "wifi", "bt", "recon-help", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
                 data = input("[Recon menu]: ")
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
-                    return
+                    continue
                 if "exit" in data:
                     break
                 try:
