@@ -17,7 +17,6 @@ from subprocess import Popen, run, PIPE
 from .reconCore.networkRecon import WifiScan
 from .reconCore.Bluetooth import bt
 from .reconCore.external_tools.phoneinfoga import Phone
-
 # redefine input method
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
