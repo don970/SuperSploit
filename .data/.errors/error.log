@@ -173,3 +173,57 @@ Traceback (most recent call last):
   File "/home/donald/.SuperSploit/source/core/use.py", line 18, in __init__
     DatabaseManagment.directlyModify(["R_HOST"], targetList[data[2]])
 TypeError: DatabaseManagment.directlyModify() takes 2 positional arguments but 3 were given
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/show.py", line 15, in show
+    exploitDetails()
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 22, in __init__
+    data = data[1].lstrip('"').rstrip('"')
+           ~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/show.py", line 15, in show
+    exploitDetails()
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 23, in __init__
+    data = data[1].lstrip('"').rstrip('"')
+           ~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/show.py", line 15, in show
+    exploitDetails()
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 23, in __init__
+    data = data[1].lstrip('"').rstrip('"')
+           ~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/show.py", line 15, in show
+    exploitDetails()
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 23, in __init__
+    data = data[1].lstrip('"').rstrip('"')
+           ~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/help.py", line 65, in help
+    cmd = subprocess.Popen(a.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'recon-help'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/help.py", line 65, in help
+    cmd = subprocess.Popen(a.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'help'
