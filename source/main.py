@@ -10,7 +10,6 @@ a = {
 # Creating a global variable for the installation path also creates a pointer
 # allowing us to use the cd command while still knowing the full path to the
 # installation dictionary.
-# This also allows us to call the program from anywhere on the disk
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 

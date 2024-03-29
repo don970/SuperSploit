@@ -1,17 +1,43 @@
   Recon Help section
 
      Main Menu:
+     ---------------------------------
                 all - Shows this page.
                 wifi - Starts the wifi osnit menu
                 bt - Start the Bluetooth osnit menu
                 phoneinfoga - starts phoneinfoga wrapper
+                recon-ng - starts recon-ng framework
 
 
      wifi menu:
+     ---------------------------------
                 get-targets - Uses nmap to do a ping scan
                 scan-target - Uses nmap -A argument to do a detailed scan
                 save-targets - Makes a persistent target list
                 view-targets - Shows current target list
                 import-targets - Imports saved targets
                 custom-scan - Starts a custom nmap scan
+
+    [recon-ng]
+
+Commands (type [help|?] <topic>):
+---------------------------------
+                back            Exits the current context
+                dashboard       Displays a summary of activity
+                db              Interfaces with the workspace's database
+                exit            Exits the framework
+                help            Displays this menu
+                index           Creates a module index (dev only)
+                keys            Manages third party resource credentials
+                marketplace     Interfaces with the module marketplace
+                modules         Interfaces with installed modules
+                options         Manages the current context options
+                pdb             Starts a Python Debugger session (dev only)
+                script          Records and executes command scripts
+                shell           Executes shell commands
+                show            Shows various framework items
+                snapshots       Manages workspace snapshots
+                spool           Spools output to a file
+                workspaces      Manages workspaces
+
 

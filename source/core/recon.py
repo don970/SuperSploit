@@ -27,6 +27,10 @@ input = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), en
 input = input.prompt
 
 
+def recon_ng(data):
+    run(["python3", f"{installation}/source/core/reconCore/external_tools/recon-ng/recon-ng"])
+    return
+
 def sys_call_Linux(data):
     dataList = data.split(' ')
     with open(".data/Aliases.json") as file:
@@ -85,8 +89,8 @@ class Recon:
 
         while True:
             try:
-                functions = [Phone, WifiScan, bt, Help.recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-                inputs = ["phoneinfoga", "wifi", "bt", "recon-help", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+                functions = [recon_ng, Phone, WifiScan, bt, Help.recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+                inputs = ["recon-ng", "phoneinfoga", "wifi", "bt", "recon-help", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
                 data = input("[Recon menu]: ")
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
