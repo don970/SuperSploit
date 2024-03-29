@@ -8,5 +8,5 @@ sudo mv ./phoneinfoga /usr/local/bin/phoneinfoga
 cwd=pwd
 cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
 cd recon-ng && pip install --break-system-packages -r REQUIREMENTS
-bash executable.sh
 cd $CWD
+bash executable.sh

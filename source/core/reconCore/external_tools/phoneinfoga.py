@@ -26,4 +26,9 @@ class Phone:
                 with open("{installation}/.data/.phone_numbers", "a") as file1:
                     file1.write(phone_number)
                     file1.close()
-        run(["phoneinfoga", "scan", "-n", phone_number])
+        print(f"Scanning phone number: [{phone_number}].")
+        data = run(["phoneinfoga", "scan", "-n", phone_number], capture_output=True)
+        with open("/tmp/phoneinfoga.scan", "w") as file:
+            file.write(data.stdout.decode())
+            file.close()
+        print(f"scan logged to /tmp/phoneinfoga.scan\n{data.stdout.decode()}")
