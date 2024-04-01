@@ -6,3 +6,8 @@
 
       [Example]
         use payload 8
+
+      [Category's]
+        - exploits
+        - payloads
+        - targets

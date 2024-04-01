@@ -20,8 +20,8 @@ from .banners import banners
 from .database import DatabaseManagment
 from .recon import Recon
 
-installlocation = f'{os.getenv("HOME")}/.SuperSploit'
-history = FileHistory(f'{installlocation}/.data/.history/history')
+installation = f'{os.getenv("HOME")}/.SuperSploit'
+history = FileHistory(f'{installation}/.data/.history/history')
 
 
 env = os.environ
@@ -32,7 +32,7 @@ class Input:
         if data in shells:
             subprocess.run([f"/usr/bin/{data}"])
         dataList = data.split(' ')
-        with open(f"{installlocation}/.data/Aliases.json") as file:
+        with open(f"{installation}/.data/Aliases.json") as file:
             Aliases = json.load(file)
             file.close()
         for k, v in Aliases.items():
