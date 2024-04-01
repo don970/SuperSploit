@@ -7,11 +7,11 @@ from .ToStdOut import ToStdout
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import InMemoryHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
-from prompt_toolkit import prompt
 from .errors import Error
 
-installlocation = f'{os.getenv("HOME")}/.SuperSploit'
+installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = InMemoryHistory()
+
 
 class Help:
     def __init__(self):
@@ -25,7 +25,7 @@ class Help:
             a = data.prompt("[Recon Help]: ")
             if "exit" in a or "back" in a:
                 break
-            if a in os.listdir(f"{installlocation}/.data/.helpRecon"):
+            if a in os.listdir(f"{installation}/.data/.helpRecon"):
                 with open(f".data/.helpRecon/{a}", "r") as file:
                     ToStdout.write("\033[H\033[J")
                     ToStdout.write(file.read())
@@ -46,28 +46,45 @@ class Help:
 
     @classmethod
     def help(cls, data):
-        data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
-        while True:
-            ToStdout.write('all - shows basic help page')
-            a = data.prompt("[Help]: ")
-            if "exit" in a or "back" in a:
-                break
-            if a in os.listdir(f"{installlocation}/.data/.help"):
-                with open(f"{installlocation}/.data/.help/{a}", "r") as file:
+        if "menu" in data:
+            a = data.split(" ")[1]
+            data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
+            while True:
+                ToStdout.write('all - shows basic help page')
+                a = data.prompt("[Help]: ")
+                if "exit" in a or "back" in a:
+                    break
+                if a in os.listdir(f"{installation}/.data/.help"):
+                    with open(f"{installation}/.data/.help/{a}", "r") as file:
+                        ToStdout.write("\033[H\033[J")
+                        ToStdout.write(file.read())
+                        file.close()
+                    continue
+                try:
+                    if "clear" in a:
+                        ToStdout.write("\033[H\033[J")
+                    else:
+                        cmd = subprocess.Popen(a.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
+                        output = cmd.communicate()[0], cmd.communicate()[1]
+                        for x in output:
+                            if len(x) > 0:
+                                ToStdout.write(x.decode())
+                        continue
+                except Exception:
+                    Error(traceback.format_exc())
+        try:
+            a = data.split(" ")[1]
+            if a in os.listdir(f"{installation}/.data/.help"):
+                with open(f"{installation}/.data/.help/{a}", "r") as file:
                     ToStdout.write("\033[H\033[J")
                     ToStdout.write(file.read())
                     file.close()
-                continue
-            try:
-                if "clear" in a:
-                    ToStdout.write("\033[H\033[J")
-                else:
-                    cmd = subprocess.Popen(a.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-                    output = cmd.communicate()[0], cmd.communicate()[1]
-                    for x in output:
-                        if len(x) > 0:
-                            ToStdout.write(x.decode())
-                    continue
-            except Exception:
-                Error(traceback.format_exc())
+                    return
 
+        except Exception as e:
+            if "Index Error" in str(e):
+                pass
+            with open(f"{installation}/.data/.help/all", "r") as file:
+                ToStdout.write("\033[H\033[J")
+                ToStdout.write(file.read())
+                file.close()

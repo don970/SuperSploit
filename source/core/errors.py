@@ -3,10 +3,11 @@ import os
 from .ToStdOut import ToStdout
 write = ToStdout.write
 
-installlocation = f'{os.getenv("HOME")}/.SuperSploit'
+installation = f'{os.getenv("HOME")}/.SuperSploit'
 
 class Error:
     def __init__(self, data):
+        """Error Handling Method prints to stdout and writes to 'installation_dictionary/.data/.errors/error.log'"""
         try:
             if "str" not in str(type(data)):
                 try:
@@ -17,7 +18,7 @@ class Error:
                     pass
             if not data.endswith("\n"):
                 data = f"{data}\n"
-            with open(f"{installlocation}/.data/.errors/error.log", "a") as stdout:
+            with open(f"{installation}/.data/.errors/error.log", "a") as stdout:
                 stdout.write(data)
                 stdout.close()
             write(data)

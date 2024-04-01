@@ -231,27 +231,3 @@ Traceback (most recent call last):
   File "/home/donald/.SuperSploit/source/core/recon.py", line 95, in __init__
     functions[inputs.index(data.split(" ")[0])](data)
 TypeError: recon_ng() takes 0 positional arguments but 1 was given
-Traceback (most recent call last):
-  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
-    functions[inputs.index(data.split(" ")[0])](data)
-  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 41, in __init__
-    funs[types.index(Type)]()
-    ~~~~^^^^^^^^^^^^^^^^^^^
-IndexError: list index out of range
-Traceback (most recent call last):
-  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
-    functions[inputs.index(data.split(" ")[0])](data)
-  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 37, in __init__
-    integration = DatabaseManagment.checkIntegration()
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/donald/.SuperSploit/source/core/database.py", line 21, in checkIntegration
-    with open(DatabaseManagment.get()["EXPLOIT"]) as file:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: "/home/donald/.SuperSploit/exploits/Linux/linux kernal 4.15.x - 4.19.2 map write() CAP_SYS_ADMIN' Local Privilege Escalation.sh"
-Traceback (most recent call last):
-  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
-    functions[inputs.index(data.split(" ")[0])](data)
-  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 41, in __init__
-    funs[types.index(Type)]()
-    ~~~~^^^^^^^^^^^^^^^^^^^
-IndexError: list index out of range

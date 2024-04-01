@@ -39,9 +39,4 @@ Chrome-os dev enviorment test exploit
 multi-handler still under dev
 ![Screenshot from 2024-03-22 15-29-39](https://github.com/don970/SuperSploit/assets/81848615/9632580b-6448-4e38-a316-930e64dd3568)
 
-session and shell
-![Screenshot from 2024-03-22 15-33-55](https://github.com/don970/SuperSploit/assets/81848615/6298a1a6-5133-4c6d-8d03-7e79fb03f6df)
-![Screenshot from 2024-03-22 15-34-36](https://github.com/don970/SuperSploit/assets/81848615/bf267678-0be3-4987-8842-61863be8b924)
-![Screenshot from 2024-03-22 15-34-44](https://github.com/don970/SuperSploit/assets/81848615/dd1e5e5f-ac69-488f-9ad0-7d502229bc51)
-
 

@@ -1,10 +1,11 @@
                             Help section
      Main Menu:
                 all - Shows this page.
+                add - Adds a variable to the database
+                exploit - Runs the exploit
+                menu - starts the recon menu
+                recon - Starts the recon/Osnit menu
                 set - Set a value.
                 show - Shows value or values supplied to it.
-                use - Set the EXPLOIT or PAYLOAD value
                 search - Search for exploits or payloads
-                exploit - Runs the exploit
-                add - Adds a variable to the database
-                recon - Starts the recon/Osnit menu
+                use - Set the EXPLOIT or PAYLOAD value
