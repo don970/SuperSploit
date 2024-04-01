@@ -24,10 +24,13 @@ installlocation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installlocation}/.data/.history/history')
 
 
-
+env = os.environ
 class Input:
     @classmethod
     def sys_call_Linux(cls, data):
+        shells = DatabaseManagment.findShells()
+        if data in shells:
+            subprocess.run([f"/usr/bin/{data}"])
         dataList = data.split(' ')
         with open(f"{installlocation}/.data/Aliases.json") as file:
             Aliases = json.load(file)
@@ -74,28 +77,31 @@ class Input:
             return False
 
     def __init__(self):
+        """This handles all the input"""
         pass
 
     @classmethod
     def check(cls, data):
         try:
-            if data.endswith(" "):
-                data = data.lstrip(" ")
-            functions = [Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-            inputs = ["recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
-            if data.split(" ")[0] in inputs:
-                functions[inputs.index(data.split(" ")[0])](data)
-                return
+            if "exit" in data:
+                sys.exit()
             if "clear" in data:
                 ToStdout.write("\033[H\033[J")
                 return
-            else:
-                if "exit" in data:
-                    sys.exit()
+            if data.endswith(" "):
+                data = data.lstrip(" ")
+            functions = [Show.shells, Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            inputs = ["shells", "recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+            try:
+                if data.split(" ")[0] in inputs:
+                    functions[inputs.index(data.split(" ")[0])](data)
+                    return
                 if "Linux" in os.uname():
                     cls.sys_call_Linux(data)
-                else:
-                    cls.sys_call_other(data)
+                    return
+                cls.sys_call_other(data)
+            except Exception:
+                Error(traceback.format_exc())
         except Exception:
             Error(traceback.format_exc())
 

@@ -6,6 +6,12 @@ from .exploithandler import exploitDetails
 class Show:
 
     @staticmethod
+    def shells(ars):
+        with open('/etc/shells') as file:
+            ToStdout.write(file.read())
+            file.close()
+
+    @staticmethod
     def show(data):
         if len(data.split(" ")) < 2:
             for k, v in DatabaseManagment.get().items():

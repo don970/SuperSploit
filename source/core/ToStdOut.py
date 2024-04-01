@@ -1,6 +1,7 @@
 class ToStdout:
     @staticmethod
     def write(data):
+        """Writes to /dev/stdout"""
         if "str" not in str(type(data)):
             try:
                 data = data.decode()

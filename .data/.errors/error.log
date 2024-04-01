@@ -227,3 +227,89 @@ Traceback (most recent call last):
   File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
     raise child_exception_type(errno_num, err_msg, err_filename)
 FileNotFoundError: [Errno 2] No such file or directory: 'help'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/help.py", line 74, in help
+    if a in os.listdir(f"{installation}/.data/.help"):
+       ^
+UnboundLocalError: cannot access local variable 'a' where it is not associated with a value
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/help.py", line 49, in help
+    a = data.split(" ")[1]
+        ~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/help.py", line 76, in help
+    a = data.split(" ")[1]
+        ~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 87, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/help.py", line 85, in help
+    if "Index Error" in e:
+       ^^^^^^^^^^^^^^^^^^
+TypeError: argument of type 'IndexError' is not iterable
+[!] Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 50, in python
+    subprocess.run([self.term, "python3", self.database["EXPLOIT"]])
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1775, in _execute_child
+    and os.path.dirname(executable)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 152, in dirname
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 100, in check
+    cls.sys_call_Linux(data)
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 31, in sys_call_Linux
+    shells = DatabaseManagment.findShells()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/database.py", line 22, in findShells
+    data = file.read.split("\n")
+           ^^^^^^^^^^^^^^^
+AttributeError: 'builtin_function_or_method' object has no attribute 'split'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 97, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+TypeError: Show.shells() takes 0 positional arguments but 1 was given
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 97, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+TypeError: Show.shells() takes 0 positional arguments but 1 was given
+[!] Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 50, in python
+    subprocess.run([self.term, "python3", self.database["EXPLOIT"]])
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1775, in _execute_child
+    and os.path.dirname(executable)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 152, in dirname
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+[!] Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 50, in python
+    subprocess.run([self.term, "python3", self.database["EXPLOIT"]])
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1775, in _execute_child
+    and os.path.dirname(executable)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen posixpath>", line 152, in dirname
+TypeError: expected str, bytes or os.PathLike object, not NoneType
