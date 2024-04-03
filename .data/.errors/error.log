@@ -231,3 +231,12 @@ Traceback (most recent call last):
   File "/home/donald/.SuperSploit/source/core/recon.py", line 95, in __init__
     functions[inputs.index(data.split(" ")[0])](data)
 TypeError: recon_ng() takes 0 positional arguments but 1 was given
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 97, in check
+    functions[inputs.index(data.split(" ")[0])](data)
+  File "/home/donald/.SuperSploit/source/core/show.py", line 21, in show
+    exploitDetails()
+  File "/home/donald/.SuperSploit/source/core/exploithandler.py", line 27, in __init__
+    args.append(x.split(":")[0].split(" ")[1])
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range

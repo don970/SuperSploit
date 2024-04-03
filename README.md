@@ -9,6 +9,7 @@ SuperSploit is my first attempt at an exploit management system I took inspirati
 Supersploit is a small python program, the program is capable of creating and handling backdoors 
 along with initial exploit connections. 
 
+
 **KEY POINTS**
     * Lightweight
     * Able to run any platform with python3

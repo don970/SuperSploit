@@ -1,3 +1,5 @@
 Changes in version 1.0.6
     * Added phoneinfoga support
-    * added recon-ng support
+    * Added recon-ng support
+    * Started individual chrome os support
+
